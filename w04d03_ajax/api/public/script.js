@@ -1,12 +1,7 @@
-// $(document).ready(() => {
-
-// })
-
-$(() => {
+$(() => { // same as $(document).ready(() => {})
 
   // making a get request to see some data
   const fetchBlogs = () => {
-
     $.ajax({
       url: "/api/blogs",
       method: "GET",
@@ -44,10 +39,8 @@ $(() => {
 
     // repopulate blog-container
     for( const blog of blogs) {
-
       const $blog = createBlog(blog);
       $blogContainer.prepend($blog);
-
     }
   }
 
@@ -57,25 +50,11 @@ $(() => {
     console.log('form was submitted');
 
     const serializedData = $(this).serialize();
-    // console.log(serializedData)
 
     $.post("/api/blogs", serializedData, (response) => {
       console.log(response)
-      
       fetchBlogs()
     })
-
-
   })
 
 })
-
-
-// const someFunction = (name) => {
-//   console.log(name)
-// }
-
-// someFunction.sayHello = () => console.log('hello')
-
-// someFunction("james")
-// someFunction.sayHello()
