@@ -29,6 +29,12 @@ $(() => { // same as $(document).ready(() => {})
     
     $blog.append($title, $body, $authorId)
 
+
+    // <div class="blog-post">
+    //   <h1>Title</h1>
+    //   <p>body of the blog post</p>
+    //   <p>author id: 2</p>
+    // </div>
     return $blog
   }
 
